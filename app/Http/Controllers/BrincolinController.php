@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brincolin;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 class BrincolinController extends Controller
@@ -14,7 +15,12 @@ class BrincolinController extends Controller
      */
     public function index()
     {
-        //
+        $brincolines = Brincolin::all();
+
+        //dd($brincolines);
+
+        return view('Brincolin/brincolinIndex' , compact('brincolines'));
+
     }
 
     /**
@@ -24,7 +30,9 @@ class BrincolinController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Categoria::all()->pluck('nombre' , 'id');
+
+        return view('Brincolin/brincolinForm' , compact('categorias'));
     }
 
     /**
@@ -35,7 +43,34 @@ class BrincolinController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //        dd($request->all());
+
+        $request->validate([
+            'brincolin'=>'required|max:255',
+            'detalles'=>'required|max:255',
+            'categoria_id' => 'required',
+            'ancho'=>'required',
+            'alto'=>'required',
+            'largo'=>'required',
+            'precio'=>'required',
+            'disponibilidad'=>'required',
+        ]);
+
+        $brincolin = new Brincolin();
+        $brincolin->brincolin = $request->brincolin;
+        $brincolin->detalles = $request->detalles;
+        $brincolin->categoria_id = $request->categoria_id;
+        $brincolin->ancho = $request->ancho;
+        $brincolin->alto = $request->alto;
+        $brincolin->largo = $request->largo;
+        $brincolin->precio = $request->precio;
+        $brincolin->disponibilidad = $request->disponibilidad;
+
+        $brincolin->save();
+
+//        dd($brincolin);
+
+        return redirect()->route('brincolin.index');
     }
 
     /**
@@ -46,7 +81,7 @@ class BrincolinController extends Controller
      */
     public function show(Brincolin $brincolin)
     {
-        //
+        return view('Brincolin/brincolinShow', compact('brincolin'));
     }
 
     /**
@@ -57,7 +92,9 @@ class BrincolinController extends Controller
      */
     public function edit(Brincolin $brincolin)
     {
-        //
+        $categorias = Categoria::all()->pluck('nombre' , 'id');
+
+        return view('Brincolin/brincolinForm', compact('brincolin' , 'categorias'));
     }
 
     /**
@@ -69,7 +106,33 @@ class BrincolinController extends Controller
      */
     public function update(Request $request, Brincolin $brincolin)
     {
-        //
+        //        dd($request->all());
+
+        $request->validate([
+            'brincolin'=>'required|max:255',
+            'detalles'=>'required|max:255',
+            'categoria_id' => 'required',
+            'ancho'=>'required',
+            'alto'=>'required',
+            'largo'=>'required',
+            'precio'=>'required',
+            'disponibilidad'=>'required',
+        ]);
+
+        $brincolin->brincolin = $request->brincolin;
+        $brincolin->detalles = $request->detalles;
+        $brincolin->categoria_id = $request->categoria_id;
+        $brincolin->ancho = $request->ancho;
+        $brincolin->alto = $request->alto;
+        $brincolin->largo = $request->largo;
+        $brincolin->precio = $request->precio;
+        $brincolin->disponibilidad = $request->disponibilidad;
+
+        $brincolin->save();
+
+//        dd($brincolin);
+
+        return redirect()->route('brincolin.index');
     }
 
     /**
@@ -80,6 +143,7 @@ class BrincolinController extends Controller
      */
     public function destroy(Brincolin $brincolin)
     {
-        //
+        $brincolin ->delete();
+        return redirect()->route('brincolin.index');
     }
 }

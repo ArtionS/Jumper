@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBrincolinesTable extends Migration
+class CreateCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,9 @@ class CreateBrincolinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('brincolines', function (Blueprint $table) {
-
+        Schema::create('categorias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('brincolin');
-            $table->string('detalles');
-            $table->unsignedFloat('ancho');
-            $table->unsignedFloat('alto');
-            $table->unsignedFloat('largo');
-
-            $table->timestamps();
+            $table->string('nombre');
         });
     }
 
@@ -33,6 +26,6 @@ class CreateBrincolinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brincolines');
+        Schema::dropIfExists('categorias');
     }
 }
