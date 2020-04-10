@@ -16,6 +16,7 @@
                         <div class="table-responsive">
 
                             <table class="table table-bordered" width="100%" cellspacing="0">
+
                                 <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">Id</th>
@@ -27,6 +28,7 @@
 
                                 </tr>
                                 </thead>
+
                                 <tbody>
                                 @foreach($brincolines as $brincolin)
 

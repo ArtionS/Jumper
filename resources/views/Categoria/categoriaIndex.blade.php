@@ -1,34 +1,47 @@
-@extends('layouts.app')
+@extends('layouts.tema')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card">
-                <div class="card-header">Lista de Categoria</div>
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Lista de Categoria
+                </div>
 
                 <div class="card-body">
-                    <table class="table">
-                        <tr>
-                            <th>ID</th>
-                            <th>Equipo</th>
 
-                        </tr>
-                        @foreach($categorias as $categoria)
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+
+                            <thead class="thead-dark">
                             <tr>
-                                <td>{{ $categoria->id }}</td>
-                                <td>{{ $categoria->nombre }}</td>
-{{--                                <td>--}}
-{{--                                    @foreach($equipo->users as $user)--}}
-{{--                                        {{ $user->name }} <br>--}}
-{{--                                    @endforeach--}}
-{{--                                </td>--}}
-                                <td>
-                                    <a href="{{ route('categoria.edit', $categoria->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                                </td>
+                                <th scope="col">ID</th>
+                                <th scope="col">Equipo</th>
+                                <th scope="col">Edit</th>
+
                             </tr>
-                        @endforeach
-                    </table>
+                            </thead>
+
+                            <tbody>
+                            @foreach($categorias as $categoria)
+                                <tr>
+                                    <td>{{ $categoria->id }}</td>
+                                    <td>{{ $categoria->nombre }}</td>
+    {{--                                <td>--}}
+    {{--                                    @foreach($equipo->users as $user)--}}
+    {{--                                        {{ $user->name }} <br>--}}
+    {{--                                    @endforeach--}}
+    {{--                                </td>--}}
+                                    <td>
+                                        <a href="{{ route('categoria.edit', $categoria->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
