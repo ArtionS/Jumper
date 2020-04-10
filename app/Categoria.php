@@ -8,7 +8,7 @@ class Categoria extends Model
 {
     public $timestamps = false;
 
-    public function tareas (){
-        return $this->hasMany(Tarea::class);
+    public function brincolines (){
+        return $this->hasMany(Brincolin::class);
     }
 }

@@ -39,8 +39,8 @@
                                 <td>{{$brincolin->brincolin}}</td>
                             </tr>
                             <tr>
-                                <td>Detalle</td>
-                                <td>{{$brincolin->detalle}}</td>
+                                <td>Detalles</td>
+                                <td>{{$brincolin->detalles}}</td>
                             </tr>
                             <tr>
                                 <td>Categoria</td>
@@ -48,19 +48,19 @@
                             </tr>
                             <tr>
                                 <td>Ancho</td>
-                                <td>{{$brincolin->ancho}}</td>
+                                <td>{{$brincolin->ancho}} m.</td>
                             </tr>
                             <tr>
                                 <td>Alto</td>
-                                <td>{{$brincolin->alto}}</td>
+                                <td>{{$brincolin->alto}} m.</td>
                             </tr>
                             <tr>
                                 <td>Largo</td>
-                                <td>{{$brincolin->largo}}</td>
+                                <td>{{$brincolin->largo}} m.</td>
                             </tr>
                             <tr>
                                 <td>Precio</td>
-                                <td>{{$brincolin->precio}}</td>
+                                <td>${{$brincolin->precio}}</td>
                             </tr>
                             <tr>
                                 <td>Disponibilidad</td>
