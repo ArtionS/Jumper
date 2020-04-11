@@ -28,9 +28,9 @@
                     </nav>
                 </div>
 
-                <div class="sb-sidenav-menu-heading">
-                    Categoria
-                </div>
+{{--                <div class="sb-sidenav-menu-heading">--}}
+{{--                    Categoria--}}
+{{--                </div>--}}
                 <a class="nav-link" href="{{ action('CategoriaController@index') }}">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-columns">
