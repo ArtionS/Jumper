@@ -58,7 +58,7 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        $categorias = Categoria::all()->pluck('nombre', 'id');
+
         return view('Categoria.categoriaForm', compact('categoria'));
     }
 

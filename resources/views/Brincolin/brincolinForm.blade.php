@@ -10,7 +10,7 @@
 
                     <div class="card-body">
 
-                        <a href="{{ action('BrincolinController@index')}}" class="btn btn-primary btn-ms">Lista de Brincolines</a>
+{{--                        <a href="{{ action('BrincolinController@index')}}" class="btn btn-primary btn-ms">Lista de Brincolines</a>--}}
 
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -48,21 +48,14 @@
                             {!! Form::text('detalles', null, ['class' => 'form-control', 'id'=> 'detalles', 'required', 'placeholder' => 'Detalles del brincolin']) !!}
                         </div>
 
-            {{--    Seleccion de Categoria del libro                    --}}
+            {{--    Seleccion de Categoria del brincolin                    --}}
                         <div class="form-group">
                             {!! Form::label('categoria_id' , 'Categoria'); !!}
 
-                            {!! Form::select('categoria_id',
+                             {!! Form::select('categoria_id',
                                 $categorias, null, ['class' => 'form-control'] ) !!}
                         </div>
-
-            {{--    Text area de la Descripcion --}}
-{{--                        <div class="form-group">--}}
-{{--                            {!! Form::label('descripcion', 'Descripcion'); !!}--}}
-{{--                            {!! Form::textarea('descripcion' , null, ['class' => 'form-control' , 'rows'=>'3']) !!}--}}
-{{--                        </div>--}}
-
-            {{--    Ancho del Brincolin                        --}}
+            {{--    Anchura del brincolin                   --}}
                         <div class="form-group">
                             {!! Form::label('ancho' , 'Ancho'); !!}
                             <br>
