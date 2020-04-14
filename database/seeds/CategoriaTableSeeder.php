@@ -14,5 +14,7 @@ class CategoriaTableSeeder extends Seeder
     {
         Categoria::create(['nombre' => 'Niño']);
         Categoria::create(['nombre' => 'Niña']);
+        Categoria::create(['nombre' => 'Fantasia']);
+        Categoria::create(['nombre' => 'Pirata']);
     }
 }
