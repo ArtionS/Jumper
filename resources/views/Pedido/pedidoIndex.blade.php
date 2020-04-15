@@ -7,7 +7,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
-                        Listado de Brincolines
+                        Listado de Pedidos
                     </div>
 
                     <div class="card-body">
@@ -20,25 +20,20 @@
                                 <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">Id</th>
-                                    <th scope="col">Id Usuario</th>
-                                    <th scope="col">Categoria</th>
-                                    <th scope="col">Precio</th>
+                                    <th scope="col">Fecha</th>
                                     <th scope="col">Info</th>
-                                    <th scope="col">Add</th>
-
                                 </tr>
                                 </thead>
 
+{{--                                {{dd($pedidos)}}--}}
+
                                 <tbody>
-                                @foreach($brincolines as $brincolin)
+                                @foreach($pedidos as $pedido)
 
                                     <tr>
-                                        <td>{{$brincolin->id}}</td>
-                                        <td>{{$brincolin->brincolin}} </td>
-                                        <td>{{$brincolin->categoria->nombre}}</td>
-                                        <td>{{$brincolin->precio}}</td>
-                                        <td><a href="{{ route('brincolin.show' , $brincolin->id) }}" class="btn btn-outline-info"> Info </a></td>
-                                        <td><a href="{{url('addToCart/*.libro->id')}}" class="btn btn-outline-success"> Add </a></td>
+                                        <td>{{$pedido->id}}</td>
+                                        <td>{{$pedido->fecha_entrega}}</td>
+                                        <td><a href="{{ route('pedido.show' , $pedido->id) }}" class="btn btn-outline-info"> Info Pedido </a></td>
 
                                     </tr>
 

@@ -27,5 +27,7 @@ Route::resource('/brincolin' , 'BrincolinController')->middleware('auth');
 
 Route::resource('/categoria', 'CategoriaController')->only(['index', 'edit', 'update'])->middleware('auth')->parameters(['categoria' => 'categoria']);
 
+Route::resource('/pedido', 'PedidoController')->middleware('auth')->parameters(['pedido' => 'pedido']);
+
 //->middleware('auth')
 

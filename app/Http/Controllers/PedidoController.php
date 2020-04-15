@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pedido;
+use App\User;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -14,7 +15,9 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::all();
+        //dd($pedidos);
+        return view('Pedido/pedidoIndex' , compact('pedidos'));
     }
 
     /**
@@ -24,7 +27,9 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all()->pluck('name' , 'id');
+
+        return view('Pedido/pedidoForm' , compact('users'));
     }
 
     /**
@@ -35,7 +40,27 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+        $request->validate([
+            'usuario_id' => 'required',
+            'telefono'=>'required|max:13|min:8',
+            'direccion'=>'required|max:255',
+            'fecha_entrega'=>'required',
+
+        ]);
+
+        $pedido = new Pedido();
+        $pedido->usuario_id = $request->usuario_id;
+        $pedido->telefono = $request->telefono;
+        $pedido->direccion = $request->direccion;
+        $pedido->fecha_entrega = $request->fecha_entrega;
+
+        $pedido->save();
+
+//        dd($pedido);
+
+        return redirect()->route('brincolin.index');
     }
 
     /**
@@ -46,7 +71,7 @@ class PedidoController extends Controller
      */
     public function show(Pedido $pedido)
     {
-        //
+        return view('Pedido/pedidoShow', compact('pedido'));
     }
 
     /**
@@ -57,7 +82,9 @@ class PedidoController extends Controller
      */
     public function edit(Pedido $pedido)
     {
-        //
+        $users = User::all()->pluck('name' , 'id');
+
+        return view('Pedido/pedidoForm' , compact('pedido' , 'users'));
     }
 
     /**
@@ -69,7 +96,24 @@ class PedidoController extends Controller
      */
     public function update(Request $request, Pedido $pedido)
     {
-        //
+        $request->validate([
+            'usuario_id' => 'required',
+            'telefono'=>'required|max:13|min:8',
+            'direccion'=>'required|max:255',
+            'fecha_entrega'=>'required',
+
+        ]);
+
+        $pedido->usuario_id = $request->usuario_id;
+        $pedido->telefono = $request->telefono;
+        $pedido->direccion = $request->direccion;
+        $pedido->fecha_entrega = $request->fecha_entrega;
+
+        $pedido->save();
+
+//        dd($pedido);
+
+        return redirect()->route('pedido.index');
     }
 
     /**
@@ -80,6 +124,7 @@ class PedidoController extends Controller
      */
     public function destroy(Pedido $pedido)
     {
-        //
+        $pedido->delete();
+        return redirect()->route('pedido.index');
     }
 }

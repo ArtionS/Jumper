@@ -5,11 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Descripción Del Brincolin </div>
+                    <div class="card-header">Descripción Del Pedido </div>
 
                     <div class="card-body">
 
-                        <a href="{{ action('BrincolinController@index')}}" class="btn btn-primary btn-ms">Lista de Brincolines</a>
+{{--                        <a href="{{ action('BrincolinController@index')}}" class="btn btn-primary btn-ms">Lista de Brincolines</a>--}}
 
                         <a href="{{ route('brincolin.edit' , $brincolin->id)}}" class="btn btn-warning btn-ms">Editar Brincolin</a>
 

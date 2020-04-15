@@ -11,11 +11,11 @@
 
                         <a href="{{ action('BrincolinController@index')}}" class="btn btn-primary btn-ms">Lista de Brincolines</a>
 
-                        <a href="{{ route('brincolin.edit' , $brincolin->id)}}" class="btn btn-warning btn-ms">Editar Brincolin</a>
+                        <a href="{{ route('pedido.edit' , $pedido->id)}}" class="btn btn-warning btn-ms">Editar Pedido</a>
 
                         <hr>
 
-                        <form action="{{route('brincolin.destroy' , $brincolin->id)}} " method="POST">
+                        <form action="{{route('pedido.destroy' , $pedido->id)}} " method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Borrar</button>
@@ -31,40 +31,27 @@
                             <tbody>
                             <tr>
                                 <td>ID</td>
-                                <td>{{$brincolin->id}}</td>
-                            </tr>
-
-                            <tr>
-                                <td>Brincolin</td>
-                                <td>{{$brincolin->brincolin}}</td>
+                                <td>{{$pedido->id}}</td>
                             </tr>
                             <tr>
-                                <td>Detalles</td>
-                                <td>{{$brincolin->detalles}}</td>
+                                <td>ID_Usuario</td>
+                                <td>{{$pedido->usuario_id}}</td>
+                            </tr>
+{{--                            <tr>--}}
+{{--                                <td>ID_Usuario</td>--}}
+{{--                                <td>{{$pedido->user->name}}</td>--}}
+{{--                            </tr>--}}
+                            <tr>
+                                <td>Teléfono</td>
+                                <td>{{$pedido->telefono}}</td>
                             </tr>
                             <tr>
-                                <td>Categoria</td>
-                                <td>{{$brincolin->categoria->nombre}}</td>
+                                <td>Dirección</td>
+                                <td>{{$pedido->direccion}}</td>
                             </tr>
                             <tr>
-                                <td>Ancho</td>
-                                <td>{{$brincolin->ancho}} m.</td>
-                            </tr>
-                            <tr>
-                                <td>Alto</td>
-                                <td>{{$brincolin->alto}} m.</td>
-                            </tr>
-                            <tr>
-                                <td>Largo</td>
-                                <td>{{$brincolin->largo}} m.</td>
-                            </tr>
-                            <tr>
-                                <td>Precio</td>
-                                <td>${{$brincolin->precio}}</td>
-                            </tr>
-                            <tr>
-                                <td>Disponibilidad</td>
-                                <td>{{$brincolin->disponibilidad}}</td>
+                                <td>Fecha de Entrega</td>
+                                <td>{{$pedido->fecha_entrega}}</td>
                             </tr>
                             </tbody>
                         </table>
