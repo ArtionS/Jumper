@@ -18,7 +18,6 @@ class CreateBrincolinsTable extends Migration
             $table->bigIncrements('id');
             $table->string('brincolin');
             $table->string('detalles');
-            $table->unsignedBigInteger('categoria_id');
             $table->unsignedFloat('ancho');
             $table->unsignedFloat('alto');
             $table->unsignedFloat('largo');
