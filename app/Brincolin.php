@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Brincolin extends Model
 {
 
-    public function categoria()
+    public function categorias()
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsToMany(Categoria::class);
     }
 }

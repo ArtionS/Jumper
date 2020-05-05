@@ -21,7 +21,6 @@
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Brincolin</th>
-                                    <th scope="col">Categoria</th>
                                     <th scope="col">Precio</th>
                                     <th scope="col">Info</th>
                                     <th scope="col">Add</th>
@@ -35,7 +34,6 @@
                                     <tr>
                                         <td>{{$brincolin->id}}</td>
                                         <td>{{$brincolin->brincolin}} </td>
-                                        <td>{{$brincolin->categoria->nombre}}</td>
                                         <td>{{$brincolin->precio}}</td>
                                         <td><a href="{{ route('brincolin.show' , $brincolin->id) }}" class="btn btn-outline-info"> Info </a></td>
                                         <td><a href="{{url('addToCart/*.libro->id')}}" class="btn btn-outline-success"> Add </a></td>

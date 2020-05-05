@@ -52,7 +52,7 @@
                         <div class="form-group">
                             {!! Form::label('categoria_id' , 'Categoria'); !!}
 
-                             {!! Form::select('categoria_id',
+                             {!! Form::checkbox('categoria_id',
                                 $categorias, null, ['class' => 'form-control'] ) !!}
                         </div>
             {{--    Anchura del brincolin                   --}}

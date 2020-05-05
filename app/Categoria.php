@@ -9,6 +9,6 @@ class Categoria extends Model
     public $timestamps = false;
 
     public function brincolines (){
-        return $this->hasMany(Brincolin::class);
+        return $this->belongsToMany(Brincolin::class);
     }
 }

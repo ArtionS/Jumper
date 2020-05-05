@@ -15,7 +15,6 @@ class BrincolinTableSeeder extends Seeder
         Brincolin::create([
             'brincolin' => 'Pirata',
             'detalles' => 'Diseño de Barco Pirata',
-            'categoria_id' => '4',
             'ancho' => '3',
             'alto' => '2',
             'largo' => '4',
@@ -26,7 +25,6 @@ class BrincolinTableSeeder extends Seeder
         Brincolin::create([
             'brincolin' => 'Final Fantasy',
             'detalles' => 'Diseño de un videojuego de fantasia',
-            'categoria_id' => '3',
             'ancho' => '4',
             'alto' => '2',
             'largo' => '3',
@@ -37,7 +35,6 @@ class BrincolinTableSeeder extends Seeder
         Brincolin::create([
             'brincolin' => 'Princesas',
             'detalles' => 'Diseño de las princesas de disney',
-            'categoria_id' => '2',
             'ancho' => '2',
             'alto' => '2',
             'largo' => '2',
@@ -48,7 +45,6 @@ class BrincolinTableSeeder extends Seeder
         Brincolin::create([
             'brincolin' => 'Super Heroes',
             'detalles' => 'Diseño de los heroes de Marvel los Vengadores',
-            'categoria_id' => '1',
             'ancho' => '2',
             'alto' => '2',
             'largo' => '3',
@@ -59,7 +55,6 @@ class BrincolinTableSeeder extends Seeder
         Brincolin::create([
             'brincolin' => 'Gusanitos',
             'detalles' => 'Diseño de gusanitos para interuactar',
-            'categoria_id' => '1',
             'ancho' => '3',
             'alto' => '3',
             'largo' => '5',
