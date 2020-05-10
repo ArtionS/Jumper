@@ -43,10 +43,6 @@
                                 <td>{{$brincolin->detalles}}</td>
                             </tr>
                             <tr>
-                                <td>Categoria</td>
-                                <td>{{$brincolin->categoria->nombre}}</td>
-                            </tr>
-                            <tr>
                                 <td>Ancho</td>
                                 <td>{{$brincolin->ancho}} m.</td>
                             </tr>

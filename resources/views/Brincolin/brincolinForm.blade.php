@@ -48,13 +48,6 @@
                             {!! Form::text('detalles', null, ['class' => 'form-control', 'id'=> 'detalles', 'required', 'placeholder' => 'Detalles del brincolin']) !!}
                         </div>
 
-            {{--    Seleccion de Categoria del brincolin                    --}}
-                        <div class="form-group">
-                            {!! Form::label('categoria_id' , 'Categoria'); !!}
-
-                             {!! Form::checkbox('categoria_id',
-                                $categorias, null, ['class' => 'form-control'] ) !!}
-                        </div>
             {{--    Anchura del brincolin                   --}}
                         <div class="form-group">
                             {!! Form::label('ancho' , 'Ancho'); !!}
@@ -96,6 +89,35 @@
                                     '1' => 'Disponible' ,
                                     '0' => 'No Disponible'
                                     ], null, ['class' => 'form-control'] ) !!}
+                        </div>
+
+            {{--    Seleccion de Categoria del brincolin                    --}}
+                        <div class="form-group">
+
+                            {!! Form::label('C','Categorias'); !!}   <br>
+
+{{--                            {!! Form::chechbok('', '', ['class' => 'form-control'] ) !!}--}}
+{{--                            {!! Form::label('' , ''); !!}--}}
+
+                            {!! Form::checkbox('cat1','1',false ,['id' => 'cat1']); !!}
+                            {!! Form::label('cat1' , 'Niño'); !!}
+                            <br>
+                            {!! Form::checkbox('cat2','1',false ,['id' => 'cat2']); !!}
+                            {!! Form::label('cat2' , 'Niña'); !!}
+                            <br>
+                            {!! Form::checkbox('cat3','1',false ,['id' => 'cat3']); !!}
+                            {!! Form::label('cat3' , 'Fantasia'); !!}
+                            <br>
+                            {!! Form::checkbox('cat4','1',false ,['id' => 'cat4']); !!}
+                            {!! Form::label('cat4' , 'Pirata'); !!}
+
+
+
+
+
+
+
+
                         </div>
                         <br>
 

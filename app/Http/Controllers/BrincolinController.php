@@ -43,12 +43,11 @@ class BrincolinController extends Controller
      */
     public function store(Request $request)
     {
-        //        dd($request->all());
+                //dd($request->all());
 
         $request->validate([
             'brincolin'=>'required|max:255',
             'detalles'=>'required|max:255',
-            'categoria_id' => 'required',
             'ancho'=>'required',
             'alto'=>'required',
             'largo'=>'required',
@@ -59,7 +58,6 @@ class BrincolinController extends Controller
         $brincolin = new Brincolin();
         $brincolin->brincolin = $request->brincolin;
         $brincolin->detalles = $request->detalles;
-        $brincolin->categoria_id = $request->categoria_id;
         $brincolin->ancho = $request->ancho;
         $brincolin->alto = $request->alto;
         $brincolin->largo = $request->largo;
@@ -69,6 +67,53 @@ class BrincolinController extends Controller
         $brincolin->save();
 
 //        dd($brincolin);
+
+//        Relación niño
+        if ($request->cat1 == "1"){
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->attach(1);
+            echo "si";
+            //dd($jump->categorias);
+        }else{
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->detach(1);
+            echo "no";
+        }
+//        Relacion niña
+        if ($request->cat2 == "1"){
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->attach(2);
+            echo "si";
+            //dd($jump->categorias);
+        }else{
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->detach(2);
+            echo "no";
+        }
+//        Relacion fantasia
+        if ($request->cat3 == "1"){
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->attach(3);
+            echo "si";
+            //dd($jump->categorias);
+        }else{
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->detach(3);
+            echo "no";
+        }
+//        Relacion pirata
+        if ($request->cat4 == "1"){
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->attach(4);
+            echo "si";
+            //dd($jump->categorias);
+        }else{
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->detach(4);
+            echo "no";
+        }
+
+        dd($brincolin);
 
         return redirect()->route('brincolin.index');
     }
@@ -111,7 +156,6 @@ class BrincolinController extends Controller
         $request->validate([
             'brincolin'=>'required|max:255',
             'detalles'=>'required|max:255',
-            'categoria_id' => 'required',
             'ancho'=>'required',
             'alto'=>'required',
             'largo'=>'required',
@@ -121,7 +165,6 @@ class BrincolinController extends Controller
 
         $brincolin->brincolin = $request->brincolin;
         $brincolin->detalles = $request->detalles;
-        $brincolin->categoria_id = $request->categoria_id;
         $brincolin->ancho = $request->ancho;
         $brincolin->alto = $request->alto;
         $brincolin->largo = $request->largo;
@@ -131,6 +174,53 @@ class BrincolinController extends Controller
         $brincolin->save();
 
 //        dd($brincolin);
+
+        //        Relación niño
+        if ($request->cat1 == "1"){
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->attach(1);
+            echo "si";
+            //dd($jump->categorias);
+        }else{
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->detach(1);
+            echo "no";
+        }
+//        Relacion niña
+        if ($request->cat2 == "1"){
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->attach(2);
+            echo "si";
+            //dd($jump->categorias);
+        }else{
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->detach(2);
+            echo "no";
+        }
+//        Relacion fantasia
+        if ($request->cat3 == "1"){
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->attach(3);
+            echo "si";
+            //dd($jump->categorias);
+        }else{
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->detach(3);
+            echo "no";
+        }
+//        Relacion pirata
+        if ($request->cat4 == "1"){
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->attach(4);
+            echo "si";
+            //dd($jump->categorias);
+        }else{
+            $jump = Brincolin::find($brincolin->id);
+            $jump->categorias()->detach(4);
+            echo "no";
+        }
+
+        //dd($brincolin);
 
         return redirect()->route('brincolin.index');
     }
