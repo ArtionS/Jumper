@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBrincolinsTable extends Migration
+class CreateBrincolinesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBrincolinsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brincolins', function (Blueprint $table) {
+        Schema::create('brincolines', function (Blueprint $table) {
 
             $table->bigIncrements('id');
             $table->string('brincolin');
@@ -24,7 +24,6 @@ class CreateBrincolinsTable extends Migration
             $table->unsignedFloat('precio');
             $table->boolean('disponibilidad');
 
-            $table->timestamps();
         });
     }
 
@@ -35,6 +34,6 @@ class CreateBrincolinsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brincolins');
+        Schema::dropIfExists('brincolines');
     }
 }

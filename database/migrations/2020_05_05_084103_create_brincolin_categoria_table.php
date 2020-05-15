@@ -16,10 +16,10 @@ class CreateBrincolinCategoriaTable extends Migration
         Schema::create('brincolin_categoria', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger("brincolin_id");
-            $table->unsignedBigInteger("categoria_id");
+            $table->foreignId("brincolin_id");
+            $table->foreignId("categoria_id");
 
-            $table->foreign("brincolin_id")->references("id")->on("brincolins");
+            $table->foreign("brincolin_id")->references("id")->on("brincolines");
             $table->foreign("categoria_id")->references("id")->on("categorias");
 
             $table->timestamps();
