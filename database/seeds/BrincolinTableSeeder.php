@@ -39,7 +39,7 @@ class BrincolinTableSeeder extends Seeder
             'alto' => '2',
             'largo' => '2',
             'precio' => '349.99',
-            'disponibilidad' => '2'
+            'disponibilidad' => '0'
         ]);
 
         Brincolin::create([
@@ -62,5 +62,11 @@ class BrincolinTableSeeder extends Seeder
             'disponibilidad' => '1'
         ]);
 
+        factory(Brincolin::class , 15)->create()->each(function (App\Brincolin $brincolin){
+            $brincolin->categorias()->attach([
+                rand(1 , 4),
+//                rand(5 , 10),
+            ]);
+        });
     }
 }
