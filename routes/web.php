@@ -17,17 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
+
+Auth::routes(['verify' => true]);
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/home' , 'BrincolinController')->middleware('auth');
+Route::resource('/home' , 'BrincolinController')->middleware('auth')->middleware('verified');
 
-Route::resource('/brincolin' , 'BrincolinController')->middleware('auth');
+Route::resource('/brincolin' , 'BrincolinController')->middleware('auth')->middleware('verified');
 
-Route::resource('/categoria', 'CategoriaController')->only(['index', 'edit', 'update'])->middleware('auth')->parameters(['categoria' => 'categoria']);
+Route::resource('/categoria', 'CategoriaController')->only(['index', 'edit', 'update'])->middleware('auth')->parameters(['categoria' => 'categoria'])->middleware('verified');
 
-Route::resource('/pedido', 'PedidoController')->middleware('auth')->parameters(['pedido' => 'pedido']);
+Route::resource('/pedido', 'PedidoController')->middleware('auth')->parameters(['pedido' => 'pedido'])->middleware('verified');
 
 //->middleware('auth')
 
