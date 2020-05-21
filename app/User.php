@@ -19,6 +19,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'name', 'email', 'password','telefono'
     ];
 
+    protected $guarded = [
+        'id', 'created_at', 'updated_at'
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
