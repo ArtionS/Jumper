@@ -67,7 +67,7 @@ class BrincolinController extends Controller
         $brincolin->save();
 
 //        dd($brincolin);
-
+//  Relaciones de Brincolines con Categorias
 //        Relación niño
         if ($request->cat1 == "1"){
             $jump = Brincolin::find($brincolin->id);

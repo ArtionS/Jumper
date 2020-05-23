@@ -17,6 +17,8 @@ class Brincolin extends Model
         'id'
     ];
 
+
+
     public function categorias()
     {
         return $this->belongsToMany(Categoria::class)->withTimestamps();

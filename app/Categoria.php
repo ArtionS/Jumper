@@ -16,6 +16,16 @@ class Categoria extends Model
         'id'
     ];
 
+    public function getNombreAttribute($value)
+    {
+        return strtolower($value);
+    }
+
+    public function setNombreAttribute($value)
+    {
+        $this->attributes['nombre'] = ucwords($value);
+    }
+
     public function brincolines (){
         return $this->belongsToMany(Brincolin::class)->withTimestamps();
     }
