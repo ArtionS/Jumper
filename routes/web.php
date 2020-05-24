@@ -31,5 +31,6 @@ Route::resource('/categoria', 'CategoriaController')->only(['index', 'edit', 'up
 
 Route::resource('/pedido', 'PedidoController')->middleware('auth')->parameters(['pedido' => 'pedido'])->middleware('verified');
 
+Route::get('/mensaje' , 'MensajeController@sendMail')->middleware('auth')->middleware('verified');
 //->middleware('auth')
 

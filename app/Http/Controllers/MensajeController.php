@@ -3,10 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Mensaje;
+use App\Mail\Reporte;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MensajeController extends Controller
 {
+
+    public function sendMail()
+    {
+        dd($this);
+
+        Mail::to('artion.sc@gmail.com')
+            ->send(new Reporte());
+
+        return redirect()->route('brincolin.index');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +28,7 @@ class MensajeController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**

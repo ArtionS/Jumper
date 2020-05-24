@@ -29,4 +29,9 @@ class Categoria extends Model
     public function brincolines (){
         return $this->belongsToMany(Brincolin::class)->withTimestamps();
     }
+
+    public function archivos()
+    {
+        return $this->morphMany(Archivo::class);
+    }
 }

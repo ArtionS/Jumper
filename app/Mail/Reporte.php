@@ -18,7 +18,6 @@ class Reporte extends Mailable
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -28,12 +27,6 @@ class Reporte extends Mailable
      */
     public function build()
     {
-        $this->from();
-        $this->subject();
-        $this->view();
-        $this->attach();
-
-
-        return $this->view('view.name');
+        return $this->from('david.soriano@alumnos.udg.mx')->subject('Welcome to Jumper')->view('Mail.reporte' );
     }
 }

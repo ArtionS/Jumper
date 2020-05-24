@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">Descripción Del Pedido </div>
+                    <div class="card-header">Descripción Del Brincolin </div>
 
                     <div class="card-body">
 
@@ -67,6 +67,41 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Imagenes del Brincolin </div>
+
+                    <div class="card-body">
+
+                        <table class="table">
+                            <thead class="thead-dark">
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>ID</td>
+                                <td>Imagen</td>
+                                <td>Accion</td>
+
+                            </tr>
+
+                            @foreach($tarea->archivos as $archivo)
+
+                            <tr>
+                                <td>{{$archivo->id}}</td>
+                                <td>{{$archivo->nombre_original}}</td>
+                                <td></td>
+                            </tr>
+
+                            @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 @endsection
