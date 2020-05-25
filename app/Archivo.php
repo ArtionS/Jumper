@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Archivo extends Model
 {
-    public function origen()
-    {
-        return $this->morphTo();
-    }
+//    public function origen()
+//    {
+//        return $this->morphTo();
+//    }
 }

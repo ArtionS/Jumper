@@ -24,9 +24,9 @@ class Brincolin extends Model
         return $this->belongsToMany(Categoria::class)->withTimestamps();
     }
 
-    public function archivos()
-    {
-        return $this->morphMany(Archivo::class);
-    }
+//    public function archivos()
+//    {
+//        return $this->morphMany(Archivo::class);
+//    }
 
 }

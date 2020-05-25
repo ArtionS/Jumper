@@ -68,38 +68,47 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">Imagenes del Brincolin </div>
+{{--            <div class="col-md-6">--}}
+{{--                <div class="card">--}}
+{{--                    <div class="card-header">Imagenes del Brincolin </div>--}}
 
-                    <div class="card-body">
 
-                        <table class="table">
-                            <thead class="thead-dark">
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>ID</td>
-                                <td>Imagen</td>
-                                <td>Accion</td>
+{{--                    <form method="POST" action="{{ route('archivo.upload') }}" enctype="multipart/form-data">--}}
+{{--                        @csrf--}}
+{{--                        <label for="archivo">Carga de Archivo</label>--}}
+{{--                        <input name="mi_archivo" type="file">--}}
+{{--                        <button type="submit" class="btn btn-primary">Enviar</button>--}}
+{{--                    </form>--}}
 
-                            </tr>
 
-                            @foreach($tarea->archivos as $archivo)
+{{--                    <div class="card-body">--}}
 
-                            <tr>
-                                <td>{{$archivo->id}}</td>
-                                <td>{{$archivo->nombre_original}}</td>
-                                <td></td>
-                            </tr>
+{{--                        <table class="table">--}}
+{{--                            <thead class="thead-dark">--}}
+{{--                            </thead>--}}
+{{--                            <tbody>--}}
+{{--                            <tr>--}}
+{{--                                <td>ID</td>--}}
+{{--                                <td>Imagen</td>--}}
+{{--                                <td>Accion</td>--}}
 
-                            @endforeach
+{{--                            </tr>--}}
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+{{--                            @foreach($brincolin->archivos as $archivo)--}}
+
+{{--                            <tr>--}}
+{{--                                <td>{{$brincolin->id}}</td>--}}
+{{--                                <td>{{$archivo->nombre_original}}</td>--}}
+{{--                                <td></td>--}}
+{{--                            </tr>--}}
+
+{{--                            @endforeach--}}
+
+{{--                            </tbody>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
         </div>
