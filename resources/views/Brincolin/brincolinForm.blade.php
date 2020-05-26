@@ -37,7 +37,11 @@
                         <br>
 
 {{--                        <img src=" /storage/{{ $brincolin->avatar }}" width="300">--}}
-                        <img src="{{ Storage::url($brincolin->avatar) }}" width="300">
+
+                        @if(isset($brincolin))
+                            <img src="{{ Storage::url($brincolin->avatar) }}" width="300">
+                        @endif
+
 
                         <label for="avatar">
                             <input type="file" name="avatar">
