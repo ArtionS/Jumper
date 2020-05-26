@@ -68,48 +68,28 @@
                 </div>
             </div>
 
-{{--            <div class="col-md-6">--}}
-{{--                <div class="card">--}}
-{{--                    <div class="card-header">Imagenes del Brincolin </div>--}}
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Imagenes  </div>
 
 
-{{--                    <form method="POST" action="{{ route('archivo.upload') }}" enctype="multipart/form-data">--}}
-{{--                        @csrf--}}
-{{--                        <label for="archivo">Carga de Archivo</label>--}}
-{{--                        <input name="mi_archivo" type="file">--}}
-{{--                        <button type="submit" class="btn btn-primary">Enviar</button>--}}
-{{--                    </form>--}}
+                    <img src="{{ Storage::url($brincolin->avatar) }}" width="350">
+
+                    {{--                    <form method="POST" action="{{  }}" enctype="multipart/form-data">--}}
+                    {{--                        @csrf--}}
+                    {{--                        <label for="archivo">Carga de Archivo</label>--}}
+                    {{--                        <input name="mi_archivo" type="file">--}}
+                    {{--                        <button type="submit" class="btn btn-primary">Enviar</button>--}}
+                    {{--                    </form>--}}
 
 
-{{--                    <div class="card-body">--}}
+                    <div class="card-body">
 
-{{--                        <table class="table">--}}
-{{--                            <thead class="thead-dark">--}}
-{{--                            </thead>--}}
-{{--                            <tbody>--}}
-{{--                            <tr>--}}
-{{--                                <td>ID</td>--}}
-{{--                                <td>Imagen</td>--}}
-{{--                                <td>Accion</td>--}}
 
-{{--                            </tr>--}}
 
-{{--                            @foreach($brincolin->archivos as $archivo)--}}
-
-{{--                            <tr>--}}
-{{--                                <td>{{$brincolin->id}}</td>--}}
-{{--                                <td>{{$archivo->nombre_original}}</td>--}}
-{{--                                <td></td>--}}
-{{--                            </tr>--}}
-
-{{--                            @endforeach--}}
-
-{{--                            </tbody>--}}
-{{--                        </table>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

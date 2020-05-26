@@ -15,8 +15,7 @@ class CreateArchivosTable extends Migration
     {
         Schema::create('archivos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('origen_id');
-            $table->string('origen_type');
+            $table->foreignId('brincolin_id');
             $table->string('nombre_original');
             $table->string('nombre_hash');
             $table->string('tamaño');

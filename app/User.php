@@ -38,10 +38,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
+//    public function setPasswordAttribute($password)
+//    {
+////        $this->attributes['password'] = bcrypt($value);
+//        $this->attributes['password'] = Hash::needsRehash($password) ? Hash::make($password) : $password;
+//    }
 
     public function pedidos()
     {

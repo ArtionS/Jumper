@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row ">
             <div class="col-md-12">
                 <div class="card mb-4">
 
@@ -25,16 +25,26 @@
             {{--    Inicio del Form viendo si es nuevo o edicion                   --}}
                         @if(isset($brincolin))
 
-                            {!! Form::model($brincolin, ['route' => ['brincolin.update' , $brincolin->id], 'method'=>'PATCH']) !!}
+                            {!! Form::model($brincolin, ['route' => ['brincolin.update' , $brincolin->id], 'method'=>'PATCH' , 'enctype' => 'multipart/form-data']) !!}
 
                         @else
 
-                            {!! Form::open(['route' => 'brincolin.store']) !!}
+                            {!! Form::open(['route' => 'brincolin.store' , 'enctype' => 'multipart/form-data']) !!}
                         @endif
 
             {{--    Formulario  --}}
 
                         <br>
+
+{{--                        <img src=" /storage/{{ $brincolin->avatar }}" width="300">--}}
+                        <img src="{{ Storage::url($brincolin->avatar) }}" width="300">
+
+                        <label for="avatar">
+                            <input type="file" name="avatar">
+
+                            {!! $errors->first('avatar','<span class=error>:message</span>') !!}
+                        </label>
+
 
             {{--    Texto del nombre del brincolin  --}}
                         <div class="form-group">
@@ -112,12 +122,6 @@
                             {!! Form::label('cat4' , 'Pirata'); !!}
 
 
-
-
-
-
-
-
                         </div>
                         <br>
 
@@ -131,6 +135,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 @endsection

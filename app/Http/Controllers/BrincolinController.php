@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brincolin;
 use App\Categoria;
+use App\Archivo;
 use Illuminate\Http\Request;
 
 class BrincolinController extends Controller
@@ -45,6 +46,8 @@ class BrincolinController extends Controller
     {
                 //dd($request->all());
 
+
+
         $request->validate([
             'brincolin'=>'required|max:255',
             'detalles'=>'required|max:255',
@@ -53,9 +56,13 @@ class BrincolinController extends Controller
             'largo'=>'required',
             'precio'=>'required',
             'disponibilidad'=>'required',
+            'avatar'=>'required|image',
         ]);
 
         $brincolin = new Brincolin();
+
+        $brincolin->avatar = $request->file('avatar')->store('public');
+
         $brincolin->brincolin = $request->brincolin;
         $brincolin->detalles = $request->detalles;
         $brincolin->ancho = $request->ancho;
@@ -143,7 +150,20 @@ class BrincolinController extends Controller
      */
     public function update(Request $request, Brincolin $brincolin)
     {
-        //        dd($request->all());
+
+//        dd($brincolin);
+
+//        dd($request->file('avatar')->store('public'));
+
+        if ($request->hasFile('avatar'))
+        {
+            $brincolin->avatar = $request->file('avatar')->store('public');
+        }
+
+
+//      return $request->all();
+
+
 
         $request->validate([
             'brincolin'=>'required|max:255',
@@ -153,6 +173,7 @@ class BrincolinController extends Controller
             'largo'=>'required',
             'precio'=>'required',
             'disponibilidad'=>'required',
+            'avatar'=>'image',
         ]);
 
         $brincolin->brincolin = $request->brincolin;

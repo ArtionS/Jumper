@@ -18,10 +18,14 @@ class Brincolin extends Model
     ];
 
 
-
     public function categorias()
     {
-        return $this->belongsToMany(Categoria::class)->withTimestamps();
+        return $this->belongsToMany(Categoria::class);
+    }
+
+    public function archivos()
+    {
+        return $this->hasMany(Archivo::class);
     }
 
 //    public function archivos()
